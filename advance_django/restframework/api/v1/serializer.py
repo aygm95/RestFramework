@@ -1,4 +1,10 @@
 from rest_framework import serializers
+from advance_django.models import Comments
+# class PostSerializer(serializers.Serializer):
+#     title=serializers.CharField()
+#     email=serializers.EmailField()
 
-class postSerializer(serializers.Serializer):
-    title=serializers.CharField(maxlength=250)
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Comments
+        fields=['title','email']
